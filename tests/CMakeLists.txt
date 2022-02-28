@@ -1,0 +1,5 @@
+add_executable(test_functions test_functions.cpp)
+add_executable(test_parser test_parser.cpp)
+
+target_link_libraries(test_functions functions)
+target_link_libraries(test_parser parser functions)

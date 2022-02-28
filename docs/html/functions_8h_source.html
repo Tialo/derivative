@@ -1,0 +1,313 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>derivative: Исходный файл src/functions/functions.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">derivative
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_e823141bb13a34caac0c96ccd0d33fcf.html">functions</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">functions.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef FUNCTIONS_FUNCTIONS_H_20221801</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define FUNCTIONS_FUNCTIONS_H_20221801</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="class_func.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="class_func.html#abfc65038a54bd96bf9b4eac257d9fd2a">   26</a></span>    <a class="code hl_function" href="class_func.html#abfc65038a54bd96bf9b4eac257d9fd2a">Func</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="class_func.html#ae2000ebad1312bd22700ed0efe6c7bcf">   28</a></span>    <a class="code hl_function" href="class_func.html#ae2000ebad1312bd22700ed0efe6c7bcf">Func</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_func.html">Func</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="class_func.html#aceb2a018d7b45dba82de6449aac9160d">   30</a></span>    <a class="code hl_function" href="class_func.html#aceb2a018d7b45dba82de6449aac9160d">Func</a>(<a class="code hl_class" href="class_func.html">Func</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="class_func.html#a243dbf51ce889f6dab05713a76dd3f57">   32</a></span>    <a class="code hl_class" href="class_func.html">Func</a>&amp; <a class="code hl_function" href="class_func.html#a243dbf51ce889f6dab05713a76dd3f57">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_func.html">Func</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="class_func.html#a13cff422c1b748f23e04d10169284aca">   34</a></span>    <a class="code hl_class" href="class_func.html">Func</a>&amp; <a class="code hl_function" href="class_func.html#a13cff422c1b748f23e04d10169284aca">operator=</a>(<a class="code hl_class" href="class_func.html">Func</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="class_func.html#ae518655ac02f947deb591eed7dce2e92">   36</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="class_func.html#ae518655ac02f947deb591eed7dce2e92">~Func</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">   42</a></span>    <span class="keyword">virtual</span> <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>() = 0;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">   48</a></span>    <span class="keyword">virtual</span> std::string <a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() = 0;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">   50</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a>{ 0 };</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment">// CONSTANT</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="class_num.html">   58</a></span><span class="keyword">class </span><a class="code hl_class" href="class_num.html">Num</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_class" href="class_num.html">Num</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> v) : value(v) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 0; }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="class_num.html#ab01de1ed59ed9be6292d19120fcdeee6">   64</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_num.html#ab01de1ed59ed9be6292d19120fcdeee6">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_num.html">Num</a>(0); }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::string <a class="code hl_function" href="class_num.html#a53fae3cd6b474d7756ee901e6445e340">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">float</span> value{ 0.0f };</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>};</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="class_e.html">   73</a></span><span class="keyword">class </span><a class="code hl_class" href="class_e.html">E</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <a class="code hl_class" href="class_e.html">E</a>() { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 0; }</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="class_e.html#a305764760e8f1c3db2c51c3c65c80258">   79</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_e.html#a305764760e8f1c3db2c51c3c65c80258">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_num.html">Num</a>(0); }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="class_e.html#a730e8d10247d6ffc640e479db3ec14ac">   80</a></span>    std::string <a class="code hl_function" href="class_e.html#a730e8d10247d6ffc640e479db3ec14ac">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;e&quot;</span>; }</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>};</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="class_p_i.html">   86</a></span><span class="keyword">class </span><a class="code hl_class" href="class_p_i.html">PI</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_class" href="class_p_i.html">PI</a>() { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 0; }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="class_p_i.html#a12630af1a9e7398a3bab89c5d0496149">   92</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_p_i.html#a12630af1a9e7398a3bab89c5d0496149">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_num.html">Num</a>(0); }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="class_p_i.html#ada6f791357a9d314201c709ed7680b1d">   93</a></span>    std::string <a class="code hl_function" href="class_p_i.html#ada6f791357a9d314201c709ed7680b1d">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;pi&quot;</span>; }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="comment">// X</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="class_x.html">  101</a></span><span class="keyword">class </span><a class="code hl_class" href="class_x.html">X</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <a class="code hl_class" href="class_x.html">X</a>() { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 0; }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="class_x.html#a8c309bfed81c7ec9a0f5a3c2838d1302">  107</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_x.html#a8c309bfed81c7ec9a0f5a3c2838d1302">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_num.html">Num</a>(1); }</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="class_x.html#a59c86310a6b98ffd0db7fd570f87e2b7">  108</a></span>    std::string <a class="code hl_function" href="class_x.html#a59c86310a6b98ffd0db7fd570f87e2b7">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;x&quot;</span>; }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>};</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// BINARY OPERATORS</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="class_sum.html">  116</a></span><span class="keyword">class </span><a class="code hl_class" href="class_sum.html">Sum</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_class" href="class_sum.html">Sum</a>(<a class="code hl_class" href="class_func.html">Func</a>* f1, <a class="code hl_class" href="class_func.html">Func</a>* f2) : arg1(f1), arg2(f2) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = (f1-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() == <span class="stringliteral">&quot;0&quot;</span> || f2-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() == <span class="stringliteral">&quot;0&quot;</span> ? 0 : 2); }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="class_sum.html#a3e4d61f0c62816b10782c873b92d0a37">  122</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_sum.html#a3e4d61f0c62816b10782c873b92d0a37">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_sum.html">Sum</a>(arg1-&gt;<a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>(), arg2-&gt;<a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>()); }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    std::string <a class="code hl_function" href="class_sum.html#acab076a817c5aa3ef33294129cd9442a">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg1, * arg2;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>};</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="class_sub.html">  131</a></span><span class="keyword">class </span><a class="code hl_class" href="class_sub.html">Sub</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <a class="code hl_class" href="class_sub.html">Sub</a>(<a class="code hl_class" href="class_func.html">Func</a>* f1, <a class="code hl_class" href="class_func.html">Func</a>* f2) : arg1(f1), arg2(f2) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = (f1-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() == <span class="stringliteral">&quot;0&quot;</span> ? 1 : 2); }</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="class_sub.html#aebbdcf161ef5b9e7183449a1f39914af">  137</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_sub.html#aebbdcf161ef5b9e7183449a1f39914af">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_sub.html">Sub</a>(arg1-&gt;<a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>(), arg2-&gt;<a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>()); }</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    std::string <a class="code hl_function" href="class_sub.html#a284a469c61540424165fa5fe3b57c1cc">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg1, * arg2;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>};</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno"><a class="line" href="class_mult.html">  146</a></span><span class="keyword">class </span><a class="code hl_class" href="class_mult.html">Mult</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <a class="code hl_class" href="class_mult.html">Mult</a>(<a class="code hl_class" href="class_func.html">Func</a>* f1, <a class="code hl_class" href="class_func.html">Func</a>* f2);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_mult.html#ae9b2a9665763c30be46184af957ee442">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>    std::string <a class="code hl_function" href="class_mult.html#a93b7f9b5ab66b2d4ace39db9e45fab01">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg1, * arg2;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>};</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="class_division.html">  161</a></span><span class="keyword">class </span><a class="code hl_class" href="class_division.html">Division</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <a class="code hl_class" href="class_division.html">Division</a>(<a class="code hl_class" href="class_func.html">Func</a>* f1, <a class="code hl_class" href="class_func.html">Func</a>* f2) : arg1(f1), arg2(f2) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 3; }</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_division.html#a56cc1931aa505ace74aeab80f4bbd650">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    std::string <a class="code hl_function" href="class_division.html#aac0e2b5bfa33fac112fcc252058ec84a">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg1, * arg2;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>};</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="comment">// TRIGINOMETRY</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno"><a class="line" href="class_sin.html">  178</a></span><span class="keyword">class </span><a class="code hl_class" href="class_sin.html">Sin</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_class" href="class_sin.html">Sin</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_sin.html#a34897b8e82b06a99a16117e5a54ce821">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno"><a class="line" href="class_sin.html#adf3d2ef7d7008dd63ff19295b6286674">  185</a></span>    std::string <a class="code hl_function" href="class_sin.html#adf3d2ef7d7008dd63ff19295b6286674">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;sin(&quot;</span> + arg-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() + <span class="stringliteral">&quot;)&quot;</span>; }</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>};</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno"><a class="line" href="class_cos.html">  193</a></span><span class="keyword">class </span><a class="code hl_class" href="class_cos.html">Cos</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    <a class="code hl_class" href="class_cos.html">Cos</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_cos.html#a28d6bd6fb9989abe278fb10448df7262">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="class_cos.html#a2db6eae15b4825ac3bb8391940b88e2d">  200</a></span>    std::string <a class="code hl_function" href="class_cos.html#a2db6eae15b4825ac3bb8391940b88e2d">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;cos(&quot;</span> + arg-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() + <span class="stringliteral">&quot;)&quot;</span>; }</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>};</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno"><a class="line" href="class_tg.html">  208</a></span><span class="keyword">class </span><a class="code hl_class" href="class_tg.html">Tg</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <a class="code hl_class" href="class_tg.html">Tg</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_tg.html#a5fc946aa23627ed528b959dfe9e45e90">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno"><a class="line" href="class_tg.html#a698ede741561daf9b2103ab19db13172">  215</a></span>    std::string <a class="code hl_function" href="class_tg.html#a698ede741561daf9b2103ab19db13172">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;tg(&quot;</span> + arg-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() + <span class="stringliteral">&quot;)&quot;</span>; }</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>};</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="class_ctg.html">  223</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ctg.html">Ctg</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <a class="code hl_class" href="class_ctg.html">Ctg</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_ctg.html#a120c8a35b25e35a8b43f777b08adbbb8">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="class_ctg.html#a62455ba241f39d28e04048977ce3b095">  230</a></span>    std::string <a class="code hl_function" href="class_ctg.html#a62455ba241f39d28e04048977ce3b095">repr</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="stringliteral">&quot;ctg(&quot;</span> + arg-&gt;<a class="code hl_function" href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">repr</a>() + <span class="stringliteral">&quot;)&quot;</span>; }</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>};</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="comment">// LOG</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno"><a class="line" href="class_ln.html">  241</a></span><span class="keyword">class </span><a class="code hl_class" href="class_ln.html">Ln</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    <a class="code hl_class" href="class_ln.html">Ln</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno"><a class="line" href="class_ln.html#a5806806f078acaf740dfdbc17e262e95">  247</a></span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_ln.html#a5806806f078acaf740dfdbc17e262e95">Der</a>()<span class="keyword"> override </span>{ <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code hl_class" href="class_division.html">Division</a>(arg-&gt;<a class="code hl_function" href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Der</a>(), arg); }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    std::string <a class="code hl_function" href="class_ln.html#aa4912e7015c764034b20091bdf4d670e">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>};</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno"><a class="line" href="class_lg.html">  256</a></span><span class="keyword">class </span><a class="code hl_class" href="class_lg.html">Lg</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>    <a class="code hl_class" href="class_lg.html">Lg</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_lg.html#ab2dfa32b4303ee70c9fb93d4974f1084">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    std::string <a class="code hl_function" href="class_lg.html#ae5767b339512d073c22e520bcc5ca326">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>};</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="comment">// POWER</span></div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="class_pow.html">  273</a></span><span class="keyword">class </span><a class="code hl_class" href="class_pow.html">Pow</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <a class="code hl_class" href="class_pow.html">Pow</a>(<a class="code hl_class" href="class_func.html">Func</a>* f1, <a class="code hl_class" href="class_func.html">Func</a>* f2) : base(f1), arg(f2) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 4; }</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_pow.html#aae2eb0ab6c2f734c2e91c66fe5cab8fb">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    std::string <a class="code hl_function" href="class_pow.html#a3c3f082f6d3e5801e97131b1ad17956e">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <a class="code hl_class" href="class_func.html">Func</a>* base, * arg;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>};</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="class_sqrt.html">  288</a></span><span class="keyword">class </span><a class="code hl_class" href="class_sqrt.html">Sqrt</a> : <span class="keyword">public</span> <a class="code hl_class" href="class_func.html">Func</a> {</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <a class="code hl_class" href="class_sqrt.html">Sqrt</a>(<a class="code hl_class" href="class_func.html">Func</a>* f) : arg(f) { <a class="code hl_variable" href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">order</a> = 5; }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="class_sqrt.html#a26efe107525bf9311eabd5b948bf2b26">Der</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    std::string <a class="code hl_function" href="class_sqrt.html#a8e142af19c43246650afcc417bdbdcc2">repr</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <a class="code hl_class" href="class_func.html">Func</a>* arg;</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>};</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif </span><span class="comment">// !FUNCTIONS_FUNCTIONS_H_20221801</span></div>
+<div class="ttc" id="aclass_cos_html"><div class="ttname"><a href="class_cos.html">Cos</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является косинусом функции</div><div class="ttdef"><b>Definition:</b> functions.h:193</div></div>
+<div class="ttc" id="aclass_cos_html_a28d6bd6fb9989abe278fb10448df7262"><div class="ttname"><a href="class_cos.html#a28d6bd6fb9989abe278fb10448df7262">Cos::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:90</div></div>
+<div class="ttc" id="aclass_cos_html_a2db6eae15b4825ac3bb8391940b88e2d"><div class="ttname"><a href="class_cos.html#a2db6eae15b4825ac3bb8391940b88e2d">Cos::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:200</div></div>
+<div class="ttc" id="aclass_ctg_html"><div class="ttname"><a href="class_ctg.html">Ctg</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является котангенсом функции</div><div class="ttdef"><b>Definition:</b> functions.h:223</div></div>
+<div class="ttc" id="aclass_ctg_html_a120c8a35b25e35a8b43f777b08adbbb8"><div class="ttname"><a href="class_ctg.html#a120c8a35b25e35a8b43f777b08adbbb8">Ctg::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:105</div></div>
+<div class="ttc" id="aclass_ctg_html_a62455ba241f39d28e04048977ce3b095"><div class="ttname"><a href="class_ctg.html#a62455ba241f39d28e04048977ce3b095">Ctg::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:230</div></div>
+<div class="ttc" id="aclass_division_html"><div class="ttname"><a href="class_division.html">Division</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является частным двух функций</div><div class="ttdef"><b>Definition:</b> functions.h:161</div></div>
+<div class="ttc" id="aclass_division_html_a56cc1931aa505ace74aeab80f4bbd650"><div class="ttname"><a href="class_division.html#a56cc1931aa505ace74aeab80f4bbd650">Division::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:72</div></div>
+<div class="ttc" id="aclass_division_html_aac0e2b5bfa33fac112fcc252058ec84a"><div class="ttname"><a href="class_division.html#aac0e2b5bfa33fac112fcc252058ec84a">Division::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:62</div></div>
+<div class="ttc" id="aclass_e_html"><div class="ttname"><a href="class_e.html">E</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является числом, равным константе Эйлера</div><div class="ttdef"><b>Definition:</b> functions.h:73</div></div>
+<div class="ttc" id="aclass_e_html_a305764760e8f1c3db2c51c3c65c80258"><div class="ttname"><a href="class_e.html#a305764760e8f1c3db2c51c3c65c80258">E::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:79</div></div>
+<div class="ttc" id="aclass_e_html_a730e8d10247d6ffc640e479db3ec14ac"><div class="ttname"><a href="class_e.html#a730e8d10247d6ffc640e479db3ec14ac">E::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:80</div></div>
+<div class="ttc" id="aclass_func_html"><div class="ttname"><a href="class_func.html">Func</a></div><div class="ttdoc">Абстрактный класс, имеющий методы Der(), repr().</div><div class="ttdef"><b>Definition:</b> functions.h:23</div></div>
+<div class="ttc" id="aclass_func_html_a13cff422c1b748f23e04d10169284aca"><div class="ttname"><a href="class_func.html#a13cff422c1b748f23e04d10169284aca">Func::operator=</a></div><div class="ttdeci">Func &amp; operator=(Func &amp;&amp;)=default</div><div class="ttdoc">Оператор перемещающего присваивания</div></div>
+<div class="ttc" id="aclass_func_html_a243dbf51ce889f6dab05713a76dd3f57"><div class="ttname"><a href="class_func.html#a243dbf51ce889f6dab05713a76dd3f57">Func::operator=</a></div><div class="ttdeci">Func &amp; operator=(const Func &amp;)=default</div><div class="ttdoc">Оператор копирующего присваивания</div></div>
+<div class="ttc" id="aclass_func_html_a2e4f6e1094027b31f4ac2e237c350b40"><div class="ttname"><a href="class_func.html#a2e4f6e1094027b31f4ac2e237c350b40">Func::order</a></div><div class="ttdeci">int order</div><div class="ttdoc">Приоритет операции</div><div class="ttdef"><b>Definition:</b> functions.h:50</div></div>
+<div class="ttc" id="aclass_func_html_a8f04cf67e3126d411d9589cf8fbbf0a3"><div class="ttname"><a href="class_func.html#a8f04cf67e3126d411d9589cf8fbbf0a3">Func::repr</a></div><div class="ttdeci">virtual std::string repr()=0</div></div>
+<div class="ttc" id="aclass_func_html_aaeb00c6b1d140e5f008721a26899d996"><div class="ttname"><a href="class_func.html#aaeb00c6b1d140e5f008721a26899d996">Func::Der</a></div><div class="ttdeci">virtual Func * Der()=0</div></div>
+<div class="ttc" id="aclass_func_html_abfc65038a54bd96bf9b4eac257d9fd2a"><div class="ttname"><a href="class_func.html#abfc65038a54bd96bf9b4eac257d9fd2a">Func::Func</a></div><div class="ttdeci">Func()=default</div><div class="ttdoc">Конструктор по умолчанию</div></div>
+<div class="ttc" id="aclass_func_html_aceb2a018d7b45dba82de6449aac9160d"><div class="ttname"><a href="class_func.html#aceb2a018d7b45dba82de6449aac9160d">Func::Func</a></div><div class="ttdeci">Func(Func &amp;&amp;)=default</div><div class="ttdoc">Конструктор перемещающего копирования</div></div>
+<div class="ttc" id="aclass_func_html_ae2000ebad1312bd22700ed0efe6c7bcf"><div class="ttname"><a href="class_func.html#ae2000ebad1312bd22700ed0efe6c7bcf">Func::Func</a></div><div class="ttdeci">Func(const Func &amp;)=default</div><div class="ttdoc">Конструктор копирования</div></div>
+<div class="ttc" id="aclass_func_html_ae518655ac02f947deb591eed7dce2e92"><div class="ttname"><a href="class_func.html#ae518655ac02f947deb591eed7dce2e92">Func::~Func</a></div><div class="ttdeci">virtual ~Func()=default</div><div class="ttdoc">Виртуальный деструктор</div></div>
+<div class="ttc" id="aclass_lg_html"><div class="ttname"><a href="class_lg.html">Lg</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является десятичным логарифмом функции</div><div class="ttdef"><b>Definition:</b> functions.h:256</div></div>
+<div class="ttc" id="aclass_lg_html_ab2dfa32b4303ee70c9fb93d4974f1084"><div class="ttname"><a href="class_lg.html#ab2dfa32b4303ee70c9fb93d4974f1084">Lg::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:126</div></div>
+<div class="ttc" id="aclass_lg_html_ae5767b339512d073c22e520bcc5ca326"><div class="ttname"><a href="class_lg.html#ae5767b339512d073c22e520bcc5ca326">Lg::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:133</div></div>
+<div class="ttc" id="aclass_ln_html"><div class="ttname"><a href="class_ln.html">Ln</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является натуральным логарифмом функции</div><div class="ttdef"><b>Definition:</b> functions.h:241</div></div>
+<div class="ttc" id="aclass_ln_html_a5806806f078acaf740dfdbc17e262e95"><div class="ttname"><a href="class_ln.html#a5806806f078acaf740dfdbc17e262e95">Ln::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:247</div></div>
+<div class="ttc" id="aclass_ln_html_aa4912e7015c764034b20091bdf4d670e"><div class="ttname"><a href="class_ln.html#aa4912e7015c764034b20091bdf4d670e">Ln::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:117</div></div>
+<div class="ttc" id="aclass_mult_html"><div class="ttname"><a href="class_mult.html">Mult</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является произведением двух функций</div><div class="ttdef"><b>Definition:</b> functions.h:146</div></div>
+<div class="ttc" id="aclass_mult_html_a93b7f9b5ab66b2d4ace39db9e45fab01"><div class="ttname"><a href="class_mult.html#a93b7f9b5ab66b2d4ace39db9e45fab01">Mult::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:50</div></div>
+<div class="ttc" id="aclass_mult_html_ae9b2a9665763c30be46184af957ee442"><div class="ttname"><a href="class_mult.html#ae9b2a9665763c30be46184af957ee442">Mult::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:43</div></div>
+<div class="ttc" id="aclass_num_html"><div class="ttname"><a href="class_num.html">Num</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является числом</div><div class="ttdef"><b>Definition:</b> functions.h:58</div></div>
+<div class="ttc" id="aclass_num_html_a53fae3cd6b474d7756ee901e6445e340"><div class="ttname"><a href="class_num.html#a53fae3cd6b474d7756ee901e6445e340">Num::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:5</div></div>
+<div class="ttc" id="aclass_num_html_ab01de1ed59ed9be6292d19120fcdeee6"><div class="ttname"><a href="class_num.html#ab01de1ed59ed9be6292d19120fcdeee6">Num::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:64</div></div>
+<div class="ttc" id="aclass_p_i_html"><div class="ttname"><a href="class_p_i.html">PI</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является числом, равным константе Пи</div><div class="ttdef"><b>Definition:</b> functions.h:86</div></div>
+<div class="ttc" id="aclass_p_i_html_a12630af1a9e7398a3bab89c5d0496149"><div class="ttname"><a href="class_p_i.html#a12630af1a9e7398a3bab89c5d0496149">PI::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:92</div></div>
+<div class="ttc" id="aclass_p_i_html_ada6f791357a9d314201c709ed7680b1d"><div class="ttname"><a href="class_p_i.html#ada6f791357a9d314201c709ed7680b1d">PI::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:93</div></div>
+<div class="ttc" id="aclass_pow_html"><div class="ttname"><a href="class_pow.html">Pow</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является показательно-степенной функцией</div><div class="ttdef"><b>Definition:</b> functions.h:273</div></div>
+<div class="ttc" id="aclass_pow_html_a3c3f082f6d3e5801e97131b1ad17956e"><div class="ttname"><a href="class_pow.html#a3c3f082f6d3e5801e97131b1ad17956e">Pow::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:161</div></div>
+<div class="ttc" id="aclass_pow_html_aae2eb0ab6c2f734c2e91c66fe5cab8fb"><div class="ttname"><a href="class_pow.html#aae2eb0ab6c2f734c2e91c66fe5cab8fb">Pow::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:142</div></div>
+<div class="ttc" id="aclass_sin_html"><div class="ttname"><a href="class_sin.html">Sin</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является синусом функции</div><div class="ttdef"><b>Definition:</b> functions.h:178</div></div>
+<div class="ttc" id="aclass_sin_html_a34897b8e82b06a99a16117e5a54ce821"><div class="ttname"><a href="class_sin.html#a34897b8e82b06a99a16117e5a54ce821">Sin::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:84</div></div>
+<div class="ttc" id="aclass_sin_html_adf3d2ef7d7008dd63ff19295b6286674"><div class="ttname"><a href="class_sin.html#adf3d2ef7d7008dd63ff19295b6286674">Sin::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:185</div></div>
+<div class="ttc" id="aclass_sqrt_html"><div class="ttname"><a href="class_sqrt.html">Sqrt</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является квадратным корнем функции</div><div class="ttdef"><b>Definition:</b> functions.h:288</div></div>
+<div class="ttc" id="aclass_sqrt_html_a26efe107525bf9311eabd5b948bf2b26"><div class="ttname"><a href="class_sqrt.html#a26efe107525bf9311eabd5b948bf2b26">Sqrt::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:174</div></div>
+<div class="ttc" id="aclass_sqrt_html_a8e142af19c43246650afcc417bdbdcc2"><div class="ttname"><a href="class_sqrt.html#a8e142af19c43246650afcc417bdbdcc2">Sqrt::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:181</div></div>
+<div class="ttc" id="aclass_sub_html"><div class="ttname"><a href="class_sub.html">Sub</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является разностью двух функций</div><div class="ttdef"><b>Definition:</b> functions.h:131</div></div>
+<div class="ttc" id="aclass_sub_html_a284a469c61540424165fa5fe3b57c1cc"><div class="ttname"><a href="class_sub.html#a284a469c61540424165fa5fe3b57c1cc">Sub::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:24</div></div>
+<div class="ttc" id="aclass_sub_html_aebbdcf161ef5b9e7183449a1f39914af"><div class="ttname"><a href="class_sub.html#aebbdcf161ef5b9e7183449a1f39914af">Sub::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:137</div></div>
+<div class="ttc" id="aclass_sum_html"><div class="ttname"><a href="class_sum.html">Sum</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является суммой двух функций</div><div class="ttdef"><b>Definition:</b> functions.h:116</div></div>
+<div class="ttc" id="aclass_sum_html_a3e4d61f0c62816b10782c873b92d0a37"><div class="ttname"><a href="class_sum.html#a3e4d61f0c62816b10782c873b92d0a37">Sum::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:122</div></div>
+<div class="ttc" id="aclass_sum_html_acab076a817c5aa3ef33294129cd9442a"><div class="ttname"><a href="class_sum.html#acab076a817c5aa3ef33294129cd9442a">Sum::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:14</div></div>
+<div class="ttc" id="aclass_tg_html"><div class="ttname"><a href="class_tg.html">Tg</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является тангенсом функции</div><div class="ttdef"><b>Definition:</b> functions.h:208</div></div>
+<div class="ttc" id="aclass_tg_html_a5fc946aa23627ed528b959dfe9e45e90"><div class="ttname"><a href="class_tg.html#a5fc946aa23627ed528b959dfe9e45e90">Tg::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.cpp:96</div></div>
+<div class="ttc" id="aclass_tg_html_a698ede741561daf9b2103ab19db13172"><div class="ttname"><a href="class_tg.html#a698ede741561daf9b2103ab19db13172">Tg::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:215</div></div>
+<div class="ttc" id="aclass_x_html"><div class="ttname"><a href="class_x.html">X</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является независимой переменной</div><div class="ttdef"><b>Definition:</b> functions.h:101</div></div>
+<div class="ttc" id="aclass_x_html_a59c86310a6b98ffd0db7fd570f87e2b7"><div class="ttname"><a href="class_x.html#a59c86310a6b98ffd0db7fd570f87e2b7">X::repr</a></div><div class="ttdeci">std::string repr() override</div><div class="ttdef"><b>Definition:</b> functions.h:108</div></div>
+<div class="ttc" id="aclass_x_html_a8c309bfed81c7ec9a0f5a3c2838d1302"><div class="ttname"><a href="class_x.html#a8c309bfed81c7ec9a0f5a3c2838d1302">X::Der</a></div><div class="ttdeci">Func * Der() override</div><div class="ttdef"><b>Definition:</b> functions.h:107</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>

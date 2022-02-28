@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.3"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>derivative: Исходный файл src/parser/parser.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">derivative
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.3 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_6cd8491d143eb218b70983dbdb3c58bc.html">parser</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle"><div class="title">parser.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PARSER_PARSER_H_20211229</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PARSER_PARSER_H_20211229</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;stdexcept&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;functions/functions.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacesimpleparser.html">simpleparser</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="namespacesimpleparser.html#a6a5c5b222bcd13eb54069805b6c99446">   15</a></span>    <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacesimpleparser.html#a6a5c5b222bcd13eb54069805b6c99446">TokenType</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        WHITESPACE,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        NUMERICAL,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        PLUS,</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        MINUS,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        MULT,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        DIVISION,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        POWER,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_class" href="class_p_i.html">PI</a>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_class" href="class_e.html">E</a>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <a class="code hl_class" href="class_x.html">X</a>,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        OPEN_BRACKET,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        CLOSED_BRACKET,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        SIN,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        COS,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        TG,</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        CTG,</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        SQRT,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        LN,</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        LG,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        NONE</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    };</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html">   44</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a> {</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#a3ae201b4200e9ffc16a18c241f0b6791">   47</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_token.html#a3ae201b4200e9ffc16a18c241f0b6791">Token</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#a5d75a0405314b46cf38f692bedcdd42b">   49</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_token.html#a5d75a0405314b46cf38f692bedcdd42b">Token</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#ad7f24cdd33f6d8f1545785d1d783b184">   51</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_token.html#ad7f24cdd33f6d8f1545785d1d783b184">Token</a>(<a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#a40568fbc4dc1cafc8e6b7c7e634bcb6c">   53</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_token.html#a40568fbc4dc1cafc8e6b7c7e634bcb6c">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#a68d64d9630f5f4abf16de9baa7b98a48">   55</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_token.html#a68d64d9630f5f4abf16de9baa7b98a48">operator=</a>(<a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#a21e4af07e2418c13e59e2f60a602aea8">   57</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_token.html#a21e4af07e2418c13e59e2f60a602aea8">~Token</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacesimpleparser.html#a6a5c5b222bcd13eb54069805b6c99446">TokenType</a> type { TokenType::WHITESPACE };</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>        <span class="keyword">const</span> <span class="keyword">enum class</span> <a class="code hl_enumeration" href="namespacesimpleparser.html#a6a5c5b222bcd13eb54069805b6c99446">TokenType</a> <a class="code hl_function" href="classsimpleparser_1_1_token.html#a7fe4a6238a7f33e4365f1781e21cd925">found</a>() const noexcept;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_token.html#ac5310a7cf1038b88d94dcdd0b7e8ebd6">   70</a></span>        std::<span class="keywordtype">string</span> <a class="code hl_variable" href="classsimpleparser_1_1_token.html#ac5310a7cf1038b88d94dcdd0b7e8ebd6">text</a>{ <span class="stringliteral">&quot;&quot;</span> };</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        std::unordered_map&lt;std::string, enum class TokenType&gt; names{</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            {<span class="stringliteral">&quot;sin&quot;</span>, TokenType::SIN}, {<span class="stringliteral">&quot;cos&quot;</span>, TokenType::COS}, </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            {<span class="stringliteral">&quot;x&quot;</span>, TokenType::X}, {<span class="stringliteral">&quot;ln&quot;</span>, TokenType::LN},</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>            {<span class="stringliteral">&quot;lg&quot;</span>, TokenType::LG}, {<span class="stringliteral">&quot;sqrt&quot;</span>, TokenType::SQRT}, </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            {<span class="stringliteral">&quot;tg&quot;</span>, TokenType::TG}, {<span class="stringliteral">&quot;ctg&quot;</span>, TokenType::CTG}, </div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {<span class="stringliteral">&quot;^&quot;</span>, TokenType::POWER}, {<span class="stringliteral">&quot;+&quot;</span>, TokenType::PLUS}, </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>            {<span class="stringliteral">&quot;-&quot;</span>, TokenType::MINUS}, {<span class="stringliteral">&quot;/&quot;</span>, TokenType::DIVISION}, </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            {<span class="stringliteral">&quot;*&quot;</span>, TokenType::MULT}, {<span class="stringliteral">&quot;e&quot;</span>, TokenType::E},</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>            {<span class="stringliteral">&quot;pi&quot;</span>, TokenType::PI},</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>            {<span class="stringliteral">&quot;(&quot;</span>, TokenType::OPEN_BRACKET},</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            {<span class="stringliteral">&quot;[&quot;</span>, TokenType::OPEN_BRACKET},</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            {<span class="stringliteral">&quot;{&quot;</span>, TokenType::OPEN_BRACKET},</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            {<span class="stringliteral">&quot;}&quot;</span>, TokenType::CLOSED_BRACKET},</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            {<span class="stringliteral">&quot;]&quot;</span>, TokenType::CLOSED_BRACKET},</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            {<span class="stringliteral">&quot;)&quot;</span>, TokenType::CLOSED_BRACKET}</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        };</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    };</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html">  108</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a> {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#a1aabf78f498b85a565026bc7d5b5f968">  111</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#a1aabf78f498b85a565026bc7d5b5f968">Tokenizer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#af733f013baa1f6f71061d373ffee745b">  113</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#af733f013baa1f6f71061d373ffee745b">Tokenizer</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#a1567ff75d1cbd955371c9ee340f81b99">  115</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#a1567ff75d1cbd955371c9ee340f81b99">Tokenizer</a>(<a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#add13e2c6c342079ea015bcd96812cd9c">  117</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#add13e2c6c342079ea015bcd96812cd9c">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#aa294b5cf0e4088dfc2a9674d3f30a969">  119</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#aa294b5cf0e4088dfc2a9674d3f30a969">operator=</a>(<a class="code hl_class" href="classsimpleparser_1_1_tokenizer.html">Tokenizer</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_tokenizer.html#a045bd88ffc5893686b764bb7e17ca628">  121</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#a045bd88ffc5893686b764bb7e17ca628">~Tokenizer</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        std::vector&lt;Token&gt; <a class="code hl_function" href="classsimpleparser_1_1_tokenizer.html#a7f9a762c9310c1b2dfcdf6360e8481f8">Tokenize</a>(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordtype">void</span> endToken(<a class="code hl_class" href="classsimpleparser_1_1_token.html">Token</a>&amp; token, std::vector&lt;Token&gt;&amp; tokens);</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    };</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html">  150</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a> {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#a07df66b8344e07fc379ff634b2efb279">  153</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a07df66b8344e07fc379ff634b2efb279">Parser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#a7eaee1b5042b0142a4017e90092eda56">  155</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a7eaee1b5042b0142a4017e90092eda56">Parser</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#a6d77e94fdf61ebef89e1e898953adad7">  157</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a6d77e94fdf61ebef89e1e898953adad7">Parser</a>(<a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#ae856820bba4b8a6895d4afd68291902c">  159</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_parser.html#ae856820bba4b8a6895d4afd68291902c">operator=</a>(<span class="keyword">const</span> <a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#a561bc49b5a03e243c1a069c473f8218b">  161</a></span>        <a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp; <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a561bc49b5a03e243c1a069c473f8218b">operator=</a>(<a class="code hl_class" href="classsimpleparser_1_1_parser.html">Parser</a>&amp;&amp;) = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classsimpleparser_1_1_parser.html#a052f5858ea1dc68d386266b271f7451e">  163</a></span>        <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a052f5858ea1dc68d386266b271f7451e">~Parser</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a07df66b8344e07fc379ff634b2efb279">Parser</a>(<span class="keyword">const</span> std::string&amp; str);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <a class="code hl_class" href="class_func.html">Func</a>* <a class="code hl_function" href="classsimpleparser_1_1_parser.html#a3eb579681ee95553702767c010300ef4">Parse</a>();</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        std::vector&lt;Token&gt; tokens;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="keywordtype">int</span> i{ -1 };</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        std::unordered_map&lt;enum class TokenType, int&gt; orders{</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            {TokenType::SIN, 4}, {TokenType::COS, 4}, </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            {TokenType::LN, 4}, {TokenType::LG, 4}, </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>            {TokenType::SQRT, 4}, {TokenType::TG, 4}, </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            {TokenType::CTG, 4}, {TokenType::POWER, 3}, </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            {TokenType::MULT, 2}, {TokenType::DIVISION, 2}, </div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            {TokenType::PLUS, 1}, {TokenType::MINUS, 1}, </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>            {TokenType::X, 0}, {TokenType::NUMERICAL, 0}, </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            {TokenType::PI, 0}, {TokenType::E, 0}, </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>            {TokenType::WHITESPACE, -1}</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        };</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        Token GetToken();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_class" href="class_func.html">Func</a>* MakeFunc(Token t, <a class="code hl_class" href="class_func.html">Func</a>* arg);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        <a class="code hl_class" href="class_func.html">Func</a>* MakeFunc(<a class="code hl_class" href="class_func.html">Func</a>* f1, Token op, <a class="code hl_class" href="class_func.html">Func</a>* f2);</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <a class="code hl_class" href="class_func.html">Func</a>* ParseSimpleExpression();</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <a class="code hl_class" href="class_func.html">Func</a>* ParseBinaryExpression(<span class="keywordtype">int</span> order);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    };</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="preprocessor">#endif !PARSER_PARSER_H_20211229</span></div>
+<div class="ttc" id="aclass_e_html"><div class="ttname"><a href="class_e.html">E</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является числом, равным константе Эйлера</div><div class="ttdef"><b>Definition:</b> functions.h:73</div></div>
+<div class="ttc" id="aclass_func_html"><div class="ttname"><a href="class_func.html">Func</a></div><div class="ttdoc">Абстрактный класс, имеющий методы Der(), repr().</div><div class="ttdef"><b>Definition:</b> functions.h:23</div></div>
+<div class="ttc" id="aclass_p_i_html"><div class="ttname"><a href="class_p_i.html">PI</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является числом, равным константе Пи</div><div class="ttdef"><b>Definition:</b> functions.h:86</div></div>
+<div class="ttc" id="aclass_x_html"><div class="ttname"><a href="class_x.html">X</a></div><div class="ttdoc">Класс наследующийся от класса Func. Является независимой переменной</div><div class="ttdef"><b>Definition:</b> functions.h:101</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html"><div class="ttname"><a href="classsimpleparser_1_1_parser.html">simpleparser::Parser</a></div><div class="ttdoc">Класс нужный для составления математической функции из набора токенов</div><div class="ttdef"><b>Definition:</b> parser.h:150</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a052f5858ea1dc68d386266b271f7451e"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a052f5858ea1dc68d386266b271f7451e">simpleparser::Parser::~Parser</a></div><div class="ttdeci">~Parser()=default</div><div class="ttdoc">Деструктор</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a07df66b8344e07fc379ff634b2efb279"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a07df66b8344e07fc379ff634b2efb279">simpleparser::Parser::Parser</a></div><div class="ttdeci">Parser()=default</div><div class="ttdoc">Конструктор по умолчанию</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a3eb579681ee95553702767c010300ef4"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a3eb579681ee95553702767c010300ef4">simpleparser::Parser::Parse</a></div><div class="ttdeci">Func * Parse()</div><div class="ttdoc">Метод парсит строку</div><div class="ttdef"><b>Definition:</b> parser.cpp:50</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a561bc49b5a03e243c1a069c473f8218b"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a561bc49b5a03e243c1a069c473f8218b">simpleparser::Parser::operator=</a></div><div class="ttdeci">Parser &amp; operator=(Parser &amp;&amp;)=default</div><div class="ttdoc">Оператор перемещающего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a6d77e94fdf61ebef89e1e898953adad7"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a6d77e94fdf61ebef89e1e898953adad7">simpleparser::Parser::Parser</a></div><div class="ttdeci">Parser(Parser &amp;&amp;)=default</div><div class="ttdoc">Конструктор перемещающего копирования</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_a7eaee1b5042b0142a4017e90092eda56"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#a7eaee1b5042b0142a4017e90092eda56">simpleparser::Parser::Parser</a></div><div class="ttdeci">Parser(const Parser &amp;)=default</div><div class="ttdoc">Конструктор копирования</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_parser_html_ae856820bba4b8a6895d4afd68291902c"><div class="ttname"><a href="classsimpleparser_1_1_parser.html#ae856820bba4b8a6895d4afd68291902c">simpleparser::Parser::operator=</a></div><div class="ttdeci">Parser &amp; operator=(const Parser &amp;)=default</div><div class="ttdoc">Оператор копирующего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html"><div class="ttname"><a href="classsimpleparser_1_1_token.html">simpleparser::Token</a></div><div class="ttdoc">Класс содержащий описание токенов</div><div class="ttdef"><b>Definition:</b> parser.h:44</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a21e4af07e2418c13e59e2f60a602aea8"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a21e4af07e2418c13e59e2f60a602aea8">simpleparser::Token::~Token</a></div><div class="ttdeci">~Token()=default</div><div class="ttdoc">Деструктор</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a3ae201b4200e9ffc16a18c241f0b6791"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a3ae201b4200e9ffc16a18c241f0b6791">simpleparser::Token::Token</a></div><div class="ttdeci">Token()=default</div><div class="ttdoc">Конструктор по умолчанию</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a40568fbc4dc1cafc8e6b7c7e634bcb6c"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a40568fbc4dc1cafc8e6b7c7e634bcb6c">simpleparser::Token::operator=</a></div><div class="ttdeci">Token &amp; operator=(const Token &amp;)=default</div><div class="ttdoc">Оператор копирующего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a5d75a0405314b46cf38f692bedcdd42b"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a5d75a0405314b46cf38f692bedcdd42b">simpleparser::Token::Token</a></div><div class="ttdeci">Token(const Token &amp;)=default</div><div class="ttdoc">Конструктор копирования</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a68d64d9630f5f4abf16de9baa7b98a48"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a68d64d9630f5f4abf16de9baa7b98a48">simpleparser::Token::operator=</a></div><div class="ttdeci">Token &amp; operator=(Token &amp;&amp;)=default</div><div class="ttdoc">Оператор перемещающего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_a7fe4a6238a7f33e4365f1781e21cd925"><div class="ttname"><a href="classsimpleparser_1_1_token.html#a7fe4a6238a7f33e4365f1781e21cd925">simpleparser::Token::found</a></div><div class="ttdeci">enum TokenType found() const noexcept</div><div class="ttdoc">Метод находит соответствующий тексту тип токена</div><div class="ttdef"><b>Definition:</b> parser.cpp:6</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_ac5310a7cf1038b88d94dcdd0b7e8ebd6"><div class="ttname"><a href="classsimpleparser_1_1_token.html#ac5310a7cf1038b88d94dcdd0b7e8ebd6">simpleparser::Token::text</a></div><div class="ttdeci">std::string text</div><div class="ttdoc">Текстовая репрезентация токена</div><div class="ttdef"><b>Definition:</b> parser.h:70</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_token_html_ad7f24cdd33f6d8f1545785d1d783b184"><div class="ttname"><a href="classsimpleparser_1_1_token.html#ad7f24cdd33f6d8f1545785d1d783b184">simpleparser::Token::Token</a></div><div class="ttdeci">Token(Token &amp;&amp;)=default</div><div class="ttdoc">Конструктор перемещающего копирования</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html">simpleparser::Tokenizer</a></div><div class="ttdoc">Класс нужный для разбиения строки на токены</div><div class="ttdef"><b>Definition:</b> parser.h:108</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_a045bd88ffc5893686b764bb7e17ca628"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#a045bd88ffc5893686b764bb7e17ca628">simpleparser::Tokenizer::~Tokenizer</a></div><div class="ttdeci">~Tokenizer()=default</div><div class="ttdoc">Деструктор</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_a1567ff75d1cbd955371c9ee340f81b99"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#a1567ff75d1cbd955371c9ee340f81b99">simpleparser::Tokenizer::Tokenizer</a></div><div class="ttdeci">Tokenizer(Tokenizer &amp;&amp;)=default</div><div class="ttdoc">Конструктор перемещающего копирования</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_a1aabf78f498b85a565026bc7d5b5f968"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#a1aabf78f498b85a565026bc7d5b5f968">simpleparser::Tokenizer::Tokenizer</a></div><div class="ttdeci">Tokenizer()=default</div><div class="ttdoc">Конструктор по умолчанию</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_a7f9a762c9310c1b2dfcdf6360e8481f8"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#a7f9a762c9310c1b2dfcdf6360e8481f8">simpleparser::Tokenizer::Tokenize</a></div><div class="ttdeci">std::vector&lt; Token &gt; Tokenize(const std::string &amp;str)</div><div class="ttdoc">Метод разбивающий строку на токены</div><div class="ttdef"><b>Definition:</b> parser.cpp:11</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_aa294b5cf0e4088dfc2a9674d3f30a969"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#aa294b5cf0e4088dfc2a9674d3f30a969">simpleparser::Tokenizer::operator=</a></div><div class="ttdeci">Tokenizer &amp; operator=(Tokenizer &amp;&amp;)=default</div><div class="ttdoc">Оператор перемещающего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_add13e2c6c342079ea015bcd96812cd9c"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#add13e2c6c342079ea015bcd96812cd9c">simpleparser::Tokenizer::operator=</a></div><div class="ttdeci">Tokenizer &amp; operator=(const Tokenizer &amp;)=default</div><div class="ttdoc">Оператор копирующего присваивания</div></div>
+<div class="ttc" id="aclasssimpleparser_1_1_tokenizer_html_af733f013baa1f6f71061d373ffee745b"><div class="ttname"><a href="classsimpleparser_1_1_tokenizer.html#af733f013baa1f6f71061d373ffee745b">simpleparser::Tokenizer::Tokenizer</a></div><div class="ttdeci">Tokenizer(const Tokenizer &amp;)=default</div><div class="ttdoc">Конструктор копирования</div></div>
+<div class="ttc" id="anamespacesimpleparser_html"><div class="ttname"><a href="namespacesimpleparser.html">simpleparser</a></div><div class="ttdoc">Пространстов имен, содержащее классы, нужные для парсинга</div><div class="ttdef"><b>Definition:</b> parser.cpp:4</div></div>
+<div class="ttc" id="anamespacesimpleparser_html_a6a5c5b222bcd13eb54069805b6c99446"><div class="ttname"><a href="namespacesimpleparser.html#a6a5c5b222bcd13eb54069805b6c99446">simpleparser::TokenType</a></div><div class="ttdeci">TokenType</div><div class="ttdoc">Перечисление, содержащее все виды токенов</div><div class="ttdef"><b>Definition:</b> parser.h:15</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.3
+</small></address>
+</body>
+</html>
